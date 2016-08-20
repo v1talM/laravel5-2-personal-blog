@@ -1,0 +1,1 @@
+41 10 * * 6 php /var/www/iblog/artisan schedule:run >> /dev/null 2>&1

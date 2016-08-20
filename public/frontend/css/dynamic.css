@@ -1,0 +1,44 @@
+/* BEGIN dynamic_css */
+body {
+	font-family: Microsoft Yahei;
+}
+#header {
+	background: url("../../images/background-image-top.png")/*tpa=http://mypreview.net/maria/wp-content/uploads/sites/14/2016/03/background-image-top.png*/ no-repeat center top;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Microsoft Yahei";
+}
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited {
+	font-family: "Microsoft Yahei";
+}
+span {
+	font-family: "Microsoft Yahei";
+}
+em {
+	font-family: "Microsoft Yahei";
+}
+p, li, td, input, label, textarea {
+	font-family: Microsoft Yahei;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+input[type="submit"] {
+	font-family: Microsoft Yahei;
+}
+/* END dynamic_css */
