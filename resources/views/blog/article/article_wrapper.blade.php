@@ -1,4 +1,3 @@
-
 <article id='post-{{ $article->id }}' class='blog-post blog-post-single post-{{ $article->id }} post type-post status-publish format-standard has-post-thumbnail hentry category-awesome category-nature tag-design tag-forest'>
         <div class='blog-post-thumb'>
             <img width='800' height='800' src='{{ $article->thumbnail }}' class='wp-post-image wp-post-image' alt='{{ $article->title }}' sizes='(max-width: 800px) 100vw, 800px' />
@@ -19,7 +18,3 @@
             </div>
         </div>
     </article>
-@section('code_js')
-
-
-@endsection

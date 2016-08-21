@@ -1,8 +1,8 @@
 
 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
     <div class="menu_section">
-        <h3>General</h3>
         @inject('menus','App\Repositories\Presenter\MenuPresenter')
+        <h3>how's it going today?</h3>
         <ul class="nav side-menu">
             {!! $menus->getSidebar() !!}
         </ul>

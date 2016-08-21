@@ -4,6 +4,11 @@
     vital
     @parent
 @endsection
+@section('ex_css')
+    <link rel="stylesheet" id="owl-carousel-css"
+          href="{{ asset('frontend/css/owl-carousel.min.css') }}" type="text/css"
+          media="all">
+@endsection
 @section('feature')
     @include('layouts/blog/feature')
 @endsection
@@ -27,5 +32,10 @@
             @include('layouts.blog.widget.category')
         </div>
     </aside>
+
+@endsection
+@section('ex_script')
+    <script src='{{ asset('frontend/js/owl-carousel.min.js') }}'></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/mytheme.js') }}"></script>
 
 @endsection

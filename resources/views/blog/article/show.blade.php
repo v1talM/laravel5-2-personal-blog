@@ -7,9 +7,7 @@
 @section('description')
     <meta name="description" content="{{ $article->title }}">
 @endsection
-@section('feature')
-    @include('layouts/blog/feature')
-@endsection
+
 @section('content')
     <div id="content" class="col col-8">
         <div id="white-wrap">

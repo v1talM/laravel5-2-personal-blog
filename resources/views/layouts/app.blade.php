@@ -22,9 +22,6 @@
     <link rel="stylesheet" id="fontawesome-css"
           href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css"
           media="all">
-    <link rel="stylesheet" id="owl-carousel-css"
-          href="{{ asset('frontend/css/owl-carousel.min.css') }}" type="text/css"
-          media="all">
     <link rel="stylesheet" id="slicknav-css"
           href="{{ asset('frontend/css/slicknav.min.css') }}" type="text/css" media="all">
     <link href="{{ asset('frontend/css/monokai_sublime.min.css') }}" rel="stylesheet">
@@ -35,8 +32,10 @@
           href="{{ asset('frontend/css/dynamic.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('frontend/css/nprogress.css') }}">
     <script type="text/javascript" src="{{ asset('frontend/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.pjax.js') }}"></script>
+    <script src="{{ asset('frontend/js/nprogress.js') }}"></script>
 </head>
-<body class="sticky-sidebar" style="transform: none;">
+<body class="sticky-sidebar" style="transform: none;" id="body">
 @include('layouts/blog/header')
 @yield('feature')
 <div id="main" style="transform: none;">
@@ -53,28 +52,16 @@
 <script type="text/javascript" src="{{ asset('frontend/js/smoothscroll.min.js') }}"></script>
 <script type="text/javascript"
         src="{{ asset('frontend/js/theia-sticky-sidebar.js') }}"></script>
-<script src='{{ asset('frontend/js/owl-carousel.min.js') }}'></script>
 <script type="text/javascript" src="{{ asset('frontend/js/retina.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('frontend/js/mytheme.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.pjax.js') }}"></script>
-<script src="{{ asset('frontend/js/nprogress.js') }}"></script>
 <script src="{{ asset('frontend/js/highlight.min.js') }}"></script>
+@yield('ex_script')
 <script>
-
-    $(document).ready(function()
-    {
-
-        $(document).pjax('a', '#main');
-        $(document).on('pjax:start', function() {
-            NProgress.start();
-        });
-        $(document).on('pjax:end', function() {
-            NProgress.done();
-        });
-        hljs.initHighlightingOnLoad();
-    });
+    $(document).ready(function(){NProgress.start()});
+    $(window).on('load',function () {
+        NProgress.done();
+    })
 </script>
-@yield('ex_js')
+
 @yield('code_js')
 </body>
 </html>
