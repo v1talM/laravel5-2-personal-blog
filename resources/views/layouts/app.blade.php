@@ -60,6 +60,7 @@
     $(window).on('load',function () {
         NProgress.done();
     })
+    hljs.initHighlightingOnLoad();
 </script>
 
 @yield('code_js')
