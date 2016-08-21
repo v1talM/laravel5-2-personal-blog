@@ -24,19 +24,42 @@ class MenuTableSeeder extends Seeder
             'parent_id' => '0',
             'url' => '/admin/menu',
         ]);
-        Menu::create([
+        $category = Menu::create([
             'name' => '分类管理',
             'icon' => 'fa fa-folder-open-o',
             'parent_id' => '0',
             'url' => '/admin/category',
         ]);
         Menu::create([
+            'name' => '分类列表',
+            'icon' => 'fa fa-folder-open-o',
+            'parent_id' => $category->id,
+            'url' => '/admin/category',
+        ]);
+        Menu::create([
+            'name' => '分类回收站',
+            'icon' => 'fa fa-folder-open-o',
+            'parent_id' => $category->id,
+            'url' => '/admin/category/trash',
+        ]);
+        $tag = Menu::create([
             'name' => '标签管理',
             'icon' => 'fa fa-tags',
             'parent_id' => '0',
             'url' => '/admin/tag',
         ]);
-
+        Menu::create([
+            'name' => '标签列表',
+            'icon' => 'fa fa-tags',
+            'parent_id' => $tag->id,
+            'url' => '/admin/tag',
+        ]);
+        Menu::create([
+            'name' => '标签回收站',
+            'icon' => 'fa fa-tags',
+            'parent_id' => $tag->id,
+            'url' => '/admin/tag/trash',
+        ]);
         $article = Menu::create([
             'name' => '文章管理',
             'icon' => 'fa fa-file-code-o',
