@@ -27,5 +27,8 @@
 ###  设置目录权限
 将项目下的storage目录赋予权限:
 `sudo chmod -R 775 your_path/storage`
+##  后台预览 admin preview
+
+![后台预览图](/public/images/admin.png "后台预览图")
 
 that's all
