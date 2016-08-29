@@ -13,7 +13,7 @@ class Article extends Model
     use SoftDeletes;
     protected $fillable = [
       'title','slug','excerpt','thumbnail','content','origin_content','category_id','read_count','reply_count',
-       'is_recommened' , 'order'
+       'is_recommened' , 'order','published_at'
     ];
     protected $dates = ['published_at'];
 
@@ -33,7 +33,7 @@ class Article extends Model
 
     public function setPublishedAtAttribute($date)
     {
-        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d',$date);
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d H:i:s',$date);
     }
 
     public function setSlugAttribute($value)

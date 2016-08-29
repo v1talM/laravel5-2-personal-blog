@@ -53,6 +53,15 @@ class ArticlePresenter
         return $categories;
     }
 
+    public function getHeaderBar()
+    {
+        $categories = Category::all();
+        $bar = '';
+        foreach ($categories as $key => $category){
+           $bar .= '<li id="menu-item-'.$category->id .'" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-'. $category->id.'"><a href="'. route("category.show",["slug" => $category->slug]) .'">'. $category->name .'</a></li>';
+        }
+        return $bar;
+    }
     public function getRecommenedPosts($limit=3,$category)
     {
         $articles = Article::recent()

@@ -1,5 +1,5 @@
 @inject('recArticles','App\Repositories\Presenter\ArticlePresenter')
-<div class="featured-blog-posts">
+<div class="featured-blog-posts hidden-xs">
     <div class="featured-blog-posts-inner">
         <div class="blog-posts-alt blog-posts-alt-diagonal-effect-enabled no-col-spacing carousel-container">
             <div class="carousel" data-stop-on-hover="false" data-columns="4" data-pagination="false" data-slide-speed="200" data-pagination-speed="800" data-scroll-per-page="false">

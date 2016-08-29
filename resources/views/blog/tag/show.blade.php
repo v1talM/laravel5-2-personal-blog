@@ -27,3 +27,7 @@
         </div>
     </aside>
 @endsection
+@section('ex_script')
+    <script type="text/javascript" src="{{ asset('frontend/js/slicknav.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/mytheme.js') }}"></script>
+@endsection

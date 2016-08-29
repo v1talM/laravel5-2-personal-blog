@@ -1,4 +1,4 @@
-<html class="no-mobile-device" lang="zh-CN"  style="transform: none;"><!--<![endif]-->
+<html lang="zh-CN"  style="transform: none;"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,29 +38,37 @@
 <body class="sticky-sidebar" style="transform: none;" id="body">
 @include('layouts/blog/header')
 @yield('feature')
-<div id="main" style="transform: none;">
-    <div class="wrapper clearfix" style="transform: none;">
-    @yield('content')
+<div id="pjax-container">
+    <div id="main" style="transform: none;">
+        <div class="wrapper clearfix" style="transform: none;">
+            @yield('content')
+        </div>
     </div>
+
 </div>
 @include('layouts/blog/footer')
+@yield('ex_script')
 <script type="text/javascript"
         src="{{ asset('frontend/js/jquery-migrate.min.js') }}"></script>
 <script type="text/javascript"
         src="{{ asset('frontend/js/jquery.form.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('frontend/js/slicknav.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('frontend/js/smoothscroll.min.js') }}"></script>
 <script type="text/javascript"
         src="{{ asset('frontend/js/theia-sticky-sidebar.js') }}"></script>
 <script type="text/javascript" src="{{ asset('frontend/js/retina.min.js') }}"></script>
 <script src="{{ asset('frontend/js/highlight.min.js') }}"></script>
-@yield('ex_script')
 <script>
-    $(document).ready(function(){NProgress.start()});
-    $(window).on('load',function () {
-        NProgress.done();
-    })
-    hljs.initHighlightingOnLoad();
+    $(document).ready(function(){
+        hljs.initHighlightingOnLoad();
+        $(document).pjax('a', '#pjax-container');
+        $(document).on("pjax:start",function(){NProgress.start()});
+        $(document).on("pjax:end",function(){NProgress.done()});
+        $(document).on("pjax:timeout", function(event) {
+            // 阻止超时导致链接跳转事件发生
+            event.preventDefault()
+        });
+    });
+
 </script>
 
 @yield('code_js')

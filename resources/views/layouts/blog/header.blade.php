@@ -2,7 +2,7 @@
 <header id="header">
     <div id="header-top">
         <div class="wrapper clearfix navbar-custom">
-            <nav id="navigation">
+            <nav id="navigation" class="hidden-xs">
                 <ul id="hornavmenu" class="menu">
                     <li id="menu-item-73"
                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-73">
@@ -14,7 +14,8 @@
                     @endforeach
                 </ul>
             </nav><!-- End #navigation -->
-            <div class="menu-mobile"></div>
+            <div class="menu-mobile">
+            </div>
             <div class="pull-right top-social-search">
                 <div id="header-search">
                     <div class="header-search-inner">

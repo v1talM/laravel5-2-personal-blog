@@ -7,3 +7,4 @@
  */
 
 $router->get('/','HomeController@index')->name('admin.home');
+$router->get('/subscribe','HomeController@subscribe')->name('admin.subscribe.show');

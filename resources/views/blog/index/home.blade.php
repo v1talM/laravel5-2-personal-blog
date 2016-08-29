@@ -37,5 +37,6 @@
 @section('ex_script')
     <script src='{{ asset('frontend/js/owl-carousel.min.js') }}'></script>
     <script type="text/javascript" src="{{ asset('frontend/js/mytheme.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/slicknav.min.js') }}"></script>
 
 @endsection

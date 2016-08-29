@@ -55,6 +55,7 @@ class ArticleController extends Controller
     {
         $input = $request->all();
         $input['slug'] = $input['title'];
+        $input['published_at'] = $input['published_at'].date("H:i:s",time());
         $input['origin_content'] = $input['content'];
         $input['excerpt'] = $input['content'];
         $article = $this->article->create($input);
@@ -86,8 +87,11 @@ class ArticleController extends Controller
      */
     public function update(StoreArticleRequest $request, $id)
     {
+        $input = $request->all();
+        $input['published_at'] = $input['published_at'].date("H:i:s",time());
+        $input['origin_content'] = $request->input('content');
         $article = $this->article->withTrashed()->findOrFail($id);
-        $article->update($request->all());
+        $article->update($input);
         $article->tags()->sync($request->input('tags'));
         flash(config('admin.articles.article.updated'),'success');
         return redirect()->back();

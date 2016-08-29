@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Models\Article;
 use App\Models\Subscribe;
 use App\Models\User;
+use App\Vital\Repositories\ArticleRepository;
+use App\Vital\Services\ArticleService;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Http\Request;
@@ -14,6 +16,18 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
+    private $articleRepository;
+
+    /**
+     * HomeController constructor.
+     * @param $articleRepository
+     */
+    public function __construct(ArticleRepository $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
+    }
+
+
     /**
      * Show the application homepage.
      *
@@ -21,10 +35,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('published_at', '<=', Carbon::now())
-            ->with(['category','tags'])
-            ->orderBy('published_at', 'desc')
-            ->paginate(config('blog.globals.posts_per_page'));
+        $articles = $this->articleRepository->getAllPublishedArticles();
         return view('blog.index.home', compact('articles'));
     }
 

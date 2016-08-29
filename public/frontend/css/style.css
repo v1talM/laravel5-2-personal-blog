@@ -1706,7 +1706,7 @@ select {
 
 .widget {
     background: #fff;
-    padding: 1em;
+    padding: 2em 1em;
     margin-bottom: 30px;
     color: #9a9a9a;
     font-size: 14px;
@@ -1792,7 +1792,7 @@ select {
     text-align: center;
 }
 .about-author-widget-banner {
-    margin: -1em -1em -3em -1em;
+    margin: -2em -1em -3em -1em;
 }
 .about-author-widget-avatar {
     margin-bottom: 10px;
@@ -2223,7 +2223,7 @@ div.wpcf7 {
         padding :1em;
     }
     .about-author-widget-banner {
-        margin: -1em -1em -3em -1em;
+        margin: -2em -1em -3em -1em;
     }
     .white-wrap {
         padding:2em;
@@ -2265,10 +2265,12 @@ div.wpcf7 {
  */
 
 @media only screen and ( min-width: 480px) and ( max-width: 767px) {
-
+    .hidden-xs{
+        display: none;
+    }
     /* content width */
     .about-author-widget-banner {
-        margin: -1em -1em -3em -1em;
+        margin: -2em -1em -3em -1em;
     }
     .blog-post-info,.blog-post-entry-content{
         padding :1em;
@@ -2285,12 +2287,15 @@ div.wpcf7 {
  */
 
 @media only screen and ( max-width: 479px) {
+    .hidden-xs{
+        display: none;
+    }
     /* content width */
     .about-author-widget-banner {
-        margin: -1em -1em -3em -1em;
+        margin: -2em -1em -3em -1em;
     }
     .white-wrap {
-        padding:1em;
+        padding:2em 1em;
     }
     .blog-post-info,.blog-post-entry-content
     {

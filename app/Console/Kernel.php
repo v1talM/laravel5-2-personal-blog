@@ -28,6 +28,6 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
             $schedule->command('mail:send')
-                    ->dailyAt('10:42');
+                    ->dailyAt('10:50');
     }
 }

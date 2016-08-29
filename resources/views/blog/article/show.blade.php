@@ -4,9 +4,6 @@
     {{ $article->title }}
     @parent
 @endsection
-@section('description')
-    <meta name="description" content="{{ $article->title }}">
-@endsection
 
 @section('content')
     <div id="content" class="col col-8">
@@ -26,4 +23,8 @@
             @include('layouts.blog.widget.tags')
         </div>
     </aside>
+@endsection
+@section('ex_script')
+    <script type="text/javascript" src="{{ asset('frontend/js/slicknav.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontend/js/mytheme.js') }}"></script>
 @endsection

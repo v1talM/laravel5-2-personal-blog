@@ -18,7 +18,6 @@ class SearchController extends Controller
             ->query($request->input('query'))
             ->get('id');
         $id = [];
-
         foreach ($articles as $article){
             $id[] = $article->id;
         }
